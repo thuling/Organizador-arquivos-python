@@ -42,14 +42,15 @@ exemplo.exe
 
 Após executar o organizador, os arquivos ficarão organizados da seguinte forma:
 
-downloads
-├── img 
-│   └── imagem.jpg
-├── arquivos
-│   └── arquivo.pdf
-├── audios e videos
-│   ├── musica.mp3
-│   └── video.mp4
-└── zipados
-    └── exemplo.exe
+- downloads
+  - img
+    - imagem.jpg
+  - arquivos
+    - arquivo.pdf
+  - audios e videos
+    - musica.mp3
+    - video.mp4
+  - zipados
+    - exemplo.exe
+
 
