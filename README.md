@@ -26,11 +26,11 @@ python organizador.py
 ```
 O organizador categoriza os arquivos em diferentes pastas com base nas seguintes extensões:
 
-Imagens: .jfif, .jpeg, .JPG, .png, .jpg
-Documentos: .pdf, .docx
-Áudios e Vídeos: .mp3, .mp4
-Arquivos Zipados: .zip, .rar, .7z
-Executáveis: .exe
+* Imagens: .jfif, .jpeg, .JPG, .png, .jpg
+* Documentos: .pdf, .docx
+* Áudios e Vídeos: .mp3, .mp4
+* Arquivos Zipados: .zip, .rar, .7z
+* Executáveis: .exe
 
 Suponha que você tenha uma pasta chamada downloads com os seguintes arquivos:
 
