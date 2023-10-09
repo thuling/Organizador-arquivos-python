@@ -23,14 +23,14 @@ Para usar o organizador, siga estas etapas:
 
 ```python: 
 python organizador.py
-O organizador irá organizar os arquivos na pasta especificada nas pastas seguintes:
+```
+O organizador categoriza os arquivos em diferentes pastas com base nas seguintes extensões:
 
-img para imagens
-arquivos para arquivos de texto
-audios e videos para arquivos de áudio e vídeo
-zipados para arquivos compactados
-Executaveis para arquivos executáveis
-Exemplo
+Imagens: .jfif, .jpeg, .JPG, .png, .jpg
+Documentos: .pdf, .docx
+Áudios e Vídeos: .mp3, .mp4
+Arquivos Zipados: .zip, .rar, .7z
+Executáveis: .exe
 
 Suponha que você tenha uma pasta chamada downloads com os seguintes arquivos:
 
@@ -39,6 +39,7 @@ imagem.jpg
 musica.mp3
 video.mp4
 exemplo.exe
+
 Após executar o organizador, os arquivos ficarão organizados da seguinte forma:
 
 downloads
@@ -51,13 +52,3 @@ downloads
     └── video.mp4
 └── zipados
     └── exemplo.exe
-Atualizações futuras
-
-Em futuras atualizações, o organizador poderá ser aprimorado para incluir as seguintes funcionalidades:
-
-Opção para o usuário escolher as pastas de destino.
-Suporte para mais extensões de arquivo.
-Tratamento de arquivos com nomes iguais.
-Contribuições
-
-Contribuições são bem-vindas. Se você tiver alguma sugestão ou correção, sinta-se à vontade para abrir um issue ou fazer um pull request.
