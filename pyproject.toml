@@ -1,0 +1,45 @@
+[build-system]
+requires = ["setuptools>=68.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "organizador-arquivos"
+version = "2.0.0"
+description = "Organizador inteligente de arquivos com interface gráfica moderna (PySide6), CLI, pré-visualização, desfazer e monitoramento em tempo real."
+readme = "README.md"
+license = { text = "MIT" }
+requires-python = ">=3.11"
+authors = [
+    { name = "Thúlio Gabriel" }
+]
+dependencies = [
+    "PySide6>=6.8.0",
+    "watchdog>=5.0.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.3.0",
+    "ruff>=0.7.0",
+    "pyinstaller>=6.10.0",
+    "pillow>=11.0.0",
+]
+
+[project.scripts]
+organizador = "organizador.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+src = ["src", "tests"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B", "SIM"]
+ignore = ["E501"]
