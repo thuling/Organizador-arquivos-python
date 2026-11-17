@@ -1,0 +1,53 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - "v*"
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: "Tag da release (ex.: v2.0.0)"
+        required: true
+        default: "v2.0.0"
+
+permissions:
+  contents: write
+
+jobs:
+  release-windows:
+    runs-on: windows-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python 3.13
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+          cache: pip
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt -r requirements-dev.txt
+
+      - name: Run linter and tests
+        env:
+          QT_QPA_PLATFORM: offscreen
+        run: |
+          ruff check src tests app.py
+          pytest -v
+
+      - name: Build Windows executable
+        run: pyinstaller --noconfirm --clean organizador.spec
+
+      - name: Publish GitHub Release
+        env:
+          GH_TOKEN: ${{ github.token }}
+          RELEASE_TAG: ${{ github.event.inputs.tag || github.ref_name }}
+        run: |
+          gh release create "$env:RELEASE_TAG" dist/OrganizadorArquivos.exe `
+            --target "${{ github.sha }}" `
+            --title "Organizador de Arquivos $env:RELEASE_TAG" `
+            --generate-notes
